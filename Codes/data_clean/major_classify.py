@@ -4,13 +4,14 @@ from sentence_transformers import SentenceTransformer, util
 import json
 import os
 current_dir = os.path.dirname(__file__)
-json_path = os.path.join(current_dir, 'class_major_data.json')
+json_path = os.path.join(current_dir, 'utils/class_major_data.json')
 
 with open(json_path, 'r', encoding='utf-8') as f:
     categories = json.load(f)
 
 file_path = '../../Source_Data/education/data.xlsx'
 df = pd.read_excel(file_path)
+df = df.head(100)
 
 def clean_major(text):
     if pd.isnull(text):
@@ -32,3 +33,6 @@ df['cleaned_major_names'] = df['major_names'].apply(clean_major)
 
 model = SentenceTransformer('paraphrase-multilingual-MiniLM-L12-v2')
 category_embeddings = {cat: model.encode(desc, convert_to_tensor=True) for cat, desc in categories.items()}
+df['major_category'] = df['cleaned_major_names'].apply(classify_major)
+print(df['major_category'].value_counts())
+df.to_excel("归类后官员数据.xlsx", index=False)
