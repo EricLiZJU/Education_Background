@@ -1,11 +1,11 @@
 # Fdb version 4
-["xdvipdfmx"] 1745559028.34997 "paper.xdv" "paper.pdf" "paper" 1745559028.56791 0
-  "paper.xdv" 1745559028.31862 15920 8f82285fab428eb5947aa71b112f0b64 "xelatex"
+["xdvipdfmx"] 1746694323.64883 "paper.xdv" "paper.pdf" "paper" 1746694323.86425 0
+  "paper.xdv" 1746694323.61877 15920 9afe68d0bfa7396a7091592cfe7463cd "xelatex"
   (generated)
   "paper.pdf"
   (rewritten before read)
-["xelatex"] 1745559027.74353 "/Users/lihongyang/Desktop/Education_Background/paper.tex" "paper.xdv" "paper" 1745559028.56731 0
-  "/Users/lihongyang/Desktop/Education_Background/paper.tex" 1745559026.99392 3107 449ec1b3c59bfa7204afec4f0e118c92 ""
+["xelatex"] 1746694322.97302 "/Users/lihongyang/Desktop/Education_Background/Paper_Writing/paper.tex" "paper.xdv" "paper" 1746694323.86365 0
+  "/Users/lihongyang/Desktop/Education_Background/Paper_Writing/paper.tex" 1746694322.7339 3106 b799fd958b4996e0cb5971ee86d9e171 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1136768653 2172 fd0c924230362ff848a33632ed45dc23 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmri7t.tfm" 1136768653 2288 f478fc8fed18759effb59f3dad7f3084 ""
@@ -93,9 +93,9 @@
   "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1708706663 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
   "/usr/local/texlive/2024/texmf-var/web2c/xetex/xelatex.fmt" 1733719742 10850182 793f5d9324487aab7ccfba42e42f11c0 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "paper.aux" 1745559028.31788 779 534b77a48947b75ff038a2e5a27c5aa9 "xelatex"
-  "paper.tex" 1745559026.99392 3107 449ec1b3c59bfa7204afec4f0e118c92 ""
-  "paper.toc" 1745559028.31828 460 36718d9c49dfcc6913f141c25ee5e155 "xelatex"
+  "paper.aux" 1746694323.61796 779 534b77a48947b75ff038a2e5a27c5aa9 "xelatex"
+  "paper.tex" 1746694322.7339 3106 b799fd958b4996e0cb5971ee86d9e171 ""
+  "paper.toc" 1746694323.61838 460 36718d9c49dfcc6913f141c25ee5e155 "xelatex"
   (generated)
   "paper.aux"
   "paper.log"

@@ -1,8 +1,8 @@
-PWD /Users/lihongyang/Desktop/Education_Background
+PWD /Users/lihongyang/Desktop/Education_Background/Paper_Writing
 INPUT /usr/local/texlive/2024/texmf.cnf
 INPUT /usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2024/texmf-var/web2c/xetex/xelatex.fmt
-INPUT /Users/lihongyang/Desktop/Education_Background/paper.tex
+INPUT /Users/lihongyang/Desktop/Education_Background/Paper_Writing/paper.tex
 OUTPUT paper.log
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/ctex/ctexart.cls
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/ctex/ctexart.cls

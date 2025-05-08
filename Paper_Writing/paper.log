@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.12.9)  25 APR 2025 13:30
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.12.9)  8 MAY 2025 16:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/lihongyang/Desktop/Education_Background/paper.tex
-(/Users/lihongyang/Desktop/Education_Background/paper.tex
+**/Users/lihongyang/Desktop/Education_Background/Paper_Writing/paper.tex
+(/Users/lihongyang/Desktop/Education_Background/Paper_Writing/paper.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
 (/usr/local/texlive/2024/texmf-dist/tex/latex/ctex/ctexart.cls (/usr/local/texlive/2024/texmf-dist/tex/latex/ctex/config/ctexbackend.cfg
@@ -665,11 +665,11 @@ L3 programming layer <2022/08/05>
  ) 
 Here is how much of TeX's memory you used:
  18506 strings out of 474773
- 396679 string characters out of 5757724
+ 396721 string characters out of 5757724
  1929839 words of memory out of 5000000
  40435 multiletter control sequences out of 15000+600000
  569457 words of font info for 111 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 93i,5n,97p,562b,389s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 93i,5n,97p,576b,389s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on paper.xdv (3 pages, 15920 bytes).
