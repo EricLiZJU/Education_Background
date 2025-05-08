@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.12.9)  25 APR 2025 13:21
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.12.9)  25 APR 2025 13:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -624,7 +624,34 @@ LaTeX Font Info:    Font shape `TU/TimesRoman(0)/m/sl' in size <10.95> not avail
 (Font)              Font shape `TU/TimesRoman(0)/m/it' tried instead on input line 54.
 [1
 
-] (./paper.toc)
+] (./paper.toc
+LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line 5.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
+File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
+)
+LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line 5.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/omlztmcm.fd
+File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
+)
+LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line 5.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/omsztmcm.fd
+File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
+)
+LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line 5.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/omxztmcm.fd
+File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
+)
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 5.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 5.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 5.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 5.
+)
 \tf@toc=\write3
 \openout3 = `paper.toc'.
 
@@ -637,12 +664,12 @@ L3 programming layer <2022/08/05>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 18351 strings out of 474773
- 391671 string characters out of 5757724
- 1922839 words of memory out of 5000000
- 40307 multiletter control sequences out of 15000+600000
- 560071 words of font info for 83 fonts, out of 8000000 for 9000
+ 18506 strings out of 474773
+ 396679 string characters out of 5757724
+ 1929839 words of memory out of 5000000
+ 40435 multiletter control sequences out of 15000+600000
+ 569457 words of font info for 111 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  93i,5n,97p,562b,389s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on paper.xdv (3 pages, 7856 bytes).
+Output written on paper.xdv (3 pages, 15920 bytes).
