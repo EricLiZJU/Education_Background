@@ -3,7 +3,8 @@ import re
 import pandas as pd
 
 def extract_short_content_sentences(text, min_len=3, max_len=20):
-    content_flags = {"n", "v", "a", "vn", "an", "ns", "nt", "nz", "nr", "eng"}
+    # content_flags = {"n", "v", "a", "vn", "an", "ns", "nt", "nz", "nr", "eng"}
+    content_flags = {"n"}
     sentences = []
 
     # 按中文标点切分为子句（防止长句）
@@ -22,9 +23,9 @@ def extract_short_content_sentences(text, min_len=3, max_len=20):
 
     return sentences
 
-with open("test_data/东莞市2024.txt", "r", encoding="utf-8") as f:
+with open("test_data/三亚市2024.txt", "r", encoding="utf-8") as f:
     raw_text = f.read()
 
 cleaned_sentences = extract_short_content_sentences(raw_text)
 df = pd.DataFrame(cleaned_sentences)
-df.to_csv("test_data/cleaned_sentences_DG.csv", index=False)
+df.to_csv("test_data/cleaned_sentences_SY.csv", index=False)

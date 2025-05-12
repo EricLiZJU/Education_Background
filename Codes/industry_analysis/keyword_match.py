@@ -4,6 +4,8 @@ from sentence_transformers import SentenceTransformer, util
 import json
 import os
 
+# develop_area_dict = ['园区', '产业园区', '高新技术产业开发区', '经济技术开发区', '经济开发区', '高新园区', '科技园区', '科技产业园区', '科技创新园区']
+
 # 加载中文兼容的 BERT 模型（推荐）
 model = SentenceTransformer("paraphrase-multilingual-MiniLM-L12-v2")
 
@@ -60,7 +62,7 @@ def match_industries_hierarchical(
 with open("utils/industry_keywords.json", "r", encoding="utf-8") as f:
     nested_industry_dict = json.load(f)
 
-text = "开展 建筑 垃圾 全过程 管控 工业 固废 全 链条 收运 试点"
+text = "三亚 数学 物理 国际 研究 中心"
 
 matches = match_industries_hierarchical(
     text,
