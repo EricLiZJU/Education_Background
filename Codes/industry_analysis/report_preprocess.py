@@ -22,9 +22,9 @@ def extract_short_content_sentences(text, min_len=3, max_len=20):
 
     return sentences
 
-with open("test_data/中山市2024.txt", "r", encoding="utf-8") as f:
+with open("test_data/东莞市2024.txt", "r", encoding="utf-8") as f:
     raw_text = f.read()
 
 cleaned_sentences = extract_short_content_sentences(raw_text)
 df = pd.DataFrame(cleaned_sentences)
-df.to_csv("test_data/cleaned_sentences_ZS.csv", index=False)
+df.to_csv("test_data/cleaned_sentences_DG.csv", index=False)

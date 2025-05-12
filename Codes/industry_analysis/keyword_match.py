@@ -24,7 +24,7 @@ def match_industries_hierarchical(
         for big_cat in nested_industry_dict.keys()
     }
     top_big_cats = dict(sorted(big_cat_scores_all.items(), key=lambda x: x[1], reverse=True)[:top_n_big])
-    print(top_big_cats)
+    #print(top_big_cats)
 
     for big_cat in top_big_cats:
         mid_dict = nested_industry_dict[big_cat]
@@ -35,7 +35,7 @@ def match_industries_hierarchical(
             for mid_cat in mid_dict.keys()
         }
         top_mid_cats = dict(sorted(mid_cat_scores_all.items(), key=lambda x: x[1], reverse=True)[:top_m_mid])
-        print(f'{big_cat}-{top_mid_cats}')
+        #print(f'{big_cat}-{top_mid_cats}')
 
         for mid_cat in top_mid_cats:
             small_level = mid_dict[mid_cat]
@@ -43,7 +43,7 @@ def match_industries_hierarchical(
             if isinstance(small_level, list):
                 for keyword in [mid_cat] + small_level:
                     score = util.cos_sim(text_embedding, model.encode(keyword, convert_to_tensor=True)).item()
-                    print(f'{big_cat}-{mid_cat}-{keyword}-{score}')
+                    #print(f'{big_cat}-{mid_cat}-{keyword}-{score}')
                     if score >= detail_threshold:
                         matches.append((big_cat, mid_cat, keyword, round(score, 4)))
 
@@ -51,7 +51,7 @@ def match_industries_hierarchical(
                 for small_cat, keywords in small_level.items():
                     for keyword in [small_cat] + keywords:
                         score = util.cos_sim(text_embedding, model.encode(keyword, convert_to_tensor=True)).item()
-                        print(f'{big_cat}-{small_cat}-{keyword}-{round(score, 4)}')
+                        #print(f'{big_cat}-{small_cat}-{keyword}-{round(score, 4)}')
                         if score >= detail_threshold:
                             matches.append((big_cat, mid_cat, keyword, round(score, 4)))
 
@@ -60,7 +60,7 @@ def match_industries_hierarchical(
 with open("utils/industry_keywords.json", "r", encoding="utf-8") as f:
     nested_industry_dict = json.load(f)
 
-text = "加快 壮大 风电 海洋 装备 制造 海洋 产业"
+text = "开展 建筑 垃圾 全过程 管控 工业 固废 全 链条 收运 试点"
 
 matches = match_industries_hierarchical(
     text,
