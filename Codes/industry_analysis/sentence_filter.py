@@ -5,7 +5,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 # ===== Step 1：加载数据 =====
 # 读取简化句子
-df = pd.read_csv("test_data/cleaned_sentences.csv")
+df = pd.read_csv("test_data/cleaned_sentences_ZS.csv")
 sentences = df.iloc[:, 0].dropna().tolist()
 
 # 读取产业关键词 JSON
@@ -46,4 +46,4 @@ top_sentences = [{"句子": sentences[i], "相似度": round(cosine_scores[i], 4
 top_df = pd.DataFrame(top_sentences)
 top_df = top_df[top_df['相似度'] > 0]
 
-top_df.to_csv("test_data/filted_sentences.csv", index=False)
+top_df.to_csv("test_data/filted_sentences_ZS.csv", index=False)
