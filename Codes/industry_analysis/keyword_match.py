@@ -7,6 +7,27 @@ import os
 # 加载中文兼容的 BERT 模型（推荐）
 model = SentenceTransformer("paraphrase-multilingual-MiniLM-L12-v2")
 
+def get_all_industry_keywords(industry_dict):
+    keywords = set()
+
+    for big_cat, mid_dict in industry_dict.items():
+        for mid_cat, sub_cat in mid_dict.items():
+            if isinstance(sub_cat, dict):  # 三层结构
+                for small_cat, kw_list in sub_cat.items():
+                    if isinstance(kw_list, list):
+                        keywords.update(kw_list)
+                    elif isinstance(kw_list, str):
+                        keywords.add(kw_list)
+            elif isinstance(sub_cat, list):  # 二层结构
+                keywords.update(sub_cat)
+            elif isinstance(sub_cat, str):  # 少数字符串节点
+                keywords.add(sub_cat)
+
+    return sorted(keywords)
+
+def filter_candidate_sentences(sentences, keywords):
+    return [s for s in sentences if any(k in s for k in keywords)]
+
 def match_industries_hierarchical(
     text,
     nested_industry_dict,
@@ -59,14 +80,24 @@ def match_industries_hierarchical(
 with open("utils/industry_keywords.json", "r", encoding="utf-8") as f:
     nested_industry_dict = json.load(f)
 
-text = "湖州市支持绿色低碳技术、新能源汽车和芯片制造"
-matches = match_industries_hierarchical(
-    text,
-    nested_industry_dict,
-    top_n_big=3,
-    top_m_mid=3,
-    detail_threshold=0.2
-)
+print(nested_industry_dict)
 
-for big, mid, kw, score in matches:
-    print(f"{big} → {mid} → {kw}  (score={score})")
+report_content = pd.read_csv('test_data/cleaned_sentences.csv')
+print(report_content)
+
+keywords = get_all_industry_keywords(nested_industry_dict)
+print(keywords)
+filted_sentences = filter_candidate_sentences(report_content, keywords)
+print(filted_sentences)
+"""
+for text in report_content['0']:
+    matches = match_industries_hierarchical(
+        text,
+        nested_industry_dict,
+        top_n_big=3,
+        top_m_mid=3,
+        detail_threshold=0.2
+    )
+
+    for big, mid, kw, score in matches:
+        print(f"{big} → {mid} → {kw}  (score={score})")"""
