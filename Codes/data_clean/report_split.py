@@ -15,7 +15,7 @@ china_provinces = [
 ]
 
 for province in china_provinces:
-    os.makedirs(f"../../Source_Data/report/cleaned_sentences/{province}", exist_ok=True)
+    os.makedirs(f"../../Source_Data/report/filted_sentences/{province}", exist_ok=True)
 
 print("所有省级行政区文件夹已创建。")
 """
