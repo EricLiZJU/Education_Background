@@ -16,6 +16,11 @@ def build_mid_class_embeddings(nested_industry_dict):
             mid_class_embeddings[(big_cat, mid_cat)] = model.encode(mid_cat, convert_to_tensor=True)
     return mid_class_embeddings
 
+def match_to_dict(matches):
+    top4 = sorted(matches, key=lambda x: x[-1], reverse=True)[:4]
+    result = {mid: big for big, mid, score in top4 if score >= 0.5}
+    return result
+
 def match_industries_mid_fast(text, mid_class_embeddings, top_n_big=3, detail_threshold=0):
     text_vec = model.encode(text, convert_to_tensor=True)
     matches = []
@@ -27,13 +32,16 @@ def match_industries_mid_fast(text, mid_class_embeddings, top_n_big=3, detail_th
 
     return sorted(matches, key=lambda x: x[-1], reverse=True)
 
-with open("utils/industry_keywords.json", "r", encoding="utf-8") as f:
-    nested_industry_dict = json.load(f)
+def quick_match(text):
+    with open("utils/industry_keywords.json", "r", encoding="utf-8") as f:
+        nested_industry_dict = json.load(f)
 
-mid_embeddings = build_mid_class_embeddings(nested_industry_dict)
-
-text = "湖州市推动软件开发与新能源电池产业升级"
-matches = match_industries_mid_fast(text, mid_embeddings, detail_threshold=0)
-
-for big, mid, score in matches:
-    print(f"{big} → {mid}  (score={score})")
+    mid_embeddings = build_mid_class_embeddings(nested_industry_dict)
+    matches = match_industries_mid_fast(text, mid_embeddings, detail_threshold=0)
+    """
+    for big, mid, score in matches:
+        print(f"{big} → {mid}  (score={score})")
+    """
+    # 示例用法
+    result_dict = match_to_dict(matches)
+    return result_dict
