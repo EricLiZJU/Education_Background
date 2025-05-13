@@ -76,7 +76,7 @@ def match_industries_hierarchical(
 with open("utils/industry_keywords.json", "r", encoding="utf-8") as f:
     nested_industry_dict = json.load(f)
 
-text = "三亚 数学 物理 国际 研究 中心"
+text = "电信 计算机 信息 保险 金融 跨境 企业"
 
 matches = match_industries_hierarchical(
     text,
