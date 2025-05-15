@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import os
+from tqdm import tqdm
 import report_preprocess
 
 china_provinces = [
@@ -14,7 +15,7 @@ china_provinces = [
     "陕西省", "甘肃省", "青海省",  # 西北
     "内蒙古自治区", "广西壮族自治区", "西藏自治区", "宁夏回族自治区", "新疆维吾尔自治区"  # 自治区
 ]
-
+"""
 for province in china_provinces:
     file_path = f'../../Source_Data/report/split/{province}.xlsx'
 
@@ -30,3 +31,32 @@ for province in china_provinces:
             path = f'{folder_path}/{file}'
             print(path)
             report_preprocess.preprocess(path, f"../../Source_Data/report/cleaned_sentences/{province}/{city}/{file}")
+"""
+for province in tqdm(china_provinces, desc="处理省份"):
+    file_path = f'../../Source_Data/report/split/{province}.xlsx'
+    try:
+        df = pd.read_excel(file_path)
+    except Exception as e:
+        print(f"读取失败：{province} — {e}")
+        continue
+
+    cities = df['地区'].dropna().unique()
+
+    for city in tqdm(cities, desc=f"{province}", leave=False):
+        city = str(city).strip().replace("/", "_").replace("\\", "_")
+        folder_path = f'../../Source_Data/report/individual_report_text/{province}/{city}'
+        output_path = f'../../Source_Data/report/cleaned_sentences/{province}/{city}'
+        os.makedirs(output_path, exist_ok=True)
+
+        if not os.path.exists(folder_path):
+            print(f"[警告] 缺少目录：{folder_path}")
+            continue
+
+        csv_files = [f for f in os.listdir(folder_path) if f.endswith('.csv')]
+        for file in tqdm(csv_files, desc=f"{city}", leave=False):
+            input_file = os.path.join(folder_path, file)
+            output_file = os.path.join(output_path, file)
+            try:
+                report_preprocess.preprocess(input_file, output_file)
+            except Exception as e:
+                print(f"处理失败：{province}-{city}-{file}：{e}")

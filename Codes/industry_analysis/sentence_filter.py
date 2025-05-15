@@ -48,6 +48,5 @@ def filter(source_path, final_path):
     top_df = pd.DataFrame(top_sentences)
     top_df = top_df[top_df['相似度'] > 0]
 
-    print(top_df.head())
-
+    print(f"[完成] 共筛选出 {len(top_df)} 条相关句子（相似度 > 0）")
     top_df.to_csv(final_path, index=False)

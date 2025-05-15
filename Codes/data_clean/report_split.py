@@ -18,7 +18,7 @@ for province in china_provinces:
     os.makedirs(f"../../Source_Data/report/filted_sentences/{province}", exist_ok=True)
 
 print("所有省级行政区文件夹已创建。")
-"""
+
 for province in china_provinces:
     file_path = f'../../Source_Data/report/split/{province}.xlsx'
     try:
@@ -30,12 +30,17 @@ for province in china_provinces:
             city_df = df[df['地区'] == city]
             for index, row in city_df.iterrows():
                 full_text = row['报告全文']
+                if pd.isna(full_text) or not str(full_text).strip():
+                    continue  # 跳过空报告
                 year = row['年份']
-                with open(f'../../Source_Data/report/individual_report_text/{province}/{city}/{year}.csv', "w", encoding="utf-8") as f:
+                output_dir = f'../../Source_Data/report/individual_report_text/{province}/{city}'
+                os.makedirs(output_dir, exist_ok=True)
+                with open(os.path.join(output_dir, f'{year}.csv'), "w", encoding="utf-8") as f:
                     f.write(full_text)
-    except:
+    except Exception as e:
+        print(f"[错误] 处理 {province} 时出错：{e}")
         continue
 
 
-"""
+
 
